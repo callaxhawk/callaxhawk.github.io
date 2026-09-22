@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="游学者周卓官方网站，收录其探险游记、地理见闻、野外生存指南及文化探索随笔。">
+    <meta name="keywords" content="游学者周卓, 探险, 地理, 野外生存, 旅游攻略">
+    <title>游学者周卓-全球探险与地理人文记录</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/travel_hero/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #a04000;
+            transform: translateY(-2px);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Section Titles */
+        .section-header {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .section-header .view-all {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Featured Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: white;
+            padding: 4rem 1.5rem;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h4 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Categories */
+        .categories-section {
+            padding: 3rem 1.5rem;
+            background-color: var(--bg-color);
+        }
+
+        .category-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .category-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+        }
+
+        .form-group button {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            border: none;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #a04000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 4rem 1.5rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                padding: 1rem 0;
+                background: white;
+                border-top: 1px solid #eee;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>🌍</span> 游学者周卓
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#journal">探险日志</a></li>
+                    <li><a href="#guide">生存指南</a></li>
+                    <li><a href="#about">关于周卓</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索未知的边界</h1>
+            <p>记录世界各地的自然奇观、人文遗迹与野外生存智慧。跟随游学者周卓的脚步，看不一样的世界。</p>
+            <a href="#journal" class="btn">开始阅读</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Featured Journal -->
+        <section id="journal">
+            <div class="section-header">
+                <h2>最新探险日志</h2>
+                <a href="#" class="view-all">查看全部日志 →</a>
+            </div>
+            <div class="grid-3">
+                <!-- Article 1 -->
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">高山徒步</span>
+                        <img src="https://picsum.photos/seed/mountain/600/400" alt="雪山攀登">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>📅 2023-10-15</span>
+                            <span>📍 喜马拉雅山脉</span>
+                        </div>
+                        <h3 class="card-title">海拔5500米的星空守望</h3>
+                        <p class="card-excerpt">在缺氧的极端环境下，如何调整呼吸节奏？今晚的星空下，我记录下了关于勇气与坚持的深刻思考...</p>
+                        <div class="card-footer">
+                            <span class="read-more">阅读全文</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">热带雨林</span>
+                        <img src="https://picsum.photos/seed/jungle/600/400" alt="雨林探险">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>📅 2023-09-28</span>
+                            <span>📍 亚马逊流域</span>
+                        </div>
+                        <h3 class="card-title">迷失丛林：寻找失落的部落</h3>
+                        <p class="card-excerpt">深入地球之肺，探索原住民的生活方式。这是一场关于自然、生态与人类文明的对话。</p>
+                        <div class="card-footer">
+                            <span class="read-more">阅读全文</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">极地科考</span>
+                        <img src="https://picsum.photos/seed/ice/600/400" alt="极地冰川">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>📅 2023-08-12</span>
+                            <span>📍 南极半岛</span>
+                        </div>
+                        <h3 class="card-title">冰川消融：见证地球的体温变化</h3>
+                        <p class="card-excerpt">实地考察全球变暖对极地生态的影响，记录下触目惊心的冰川崩解瞬间。</p>
+                        <div class="card-footer">
+                            <span class="read-more">阅读全文</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>关于游学者周卓</h3>
+                    <p>周卓，一名专注于极限探险与地理人文记录的自由撰稿人与摄影师。自大学毕业后，他放弃了稳定的都市生活，选择背起行囊，用双脚丈量地球。</p>
+                    <p>他的足迹遍布七大洲，从撒哈拉沙漠的烈日到格陵兰岛的极寒，他致力于通过镜头和文字，向大众传递自然的壮美与脆弱，以及野外生存的实用知识。</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h4>40+</h4>
+                            <span>个国家</span>
+                        </div>
+                        <div class="stat-item">
+                            <h4>100+</h4>
+                            <span>篇深度游记</span>
+                        </div>
+                        <div class="stat-item">
+                            <h4>5</h4>
+                            <span>座雪山登顶</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/hiker_portrait/600/700" alt="周卓肖像">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories-section">
+            <div class="section-header">
+                <h2>探索领域</h2>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <span class="cat-icon">🏔️</span>
+                    <h4>高山探险</h4>
+                    <p>攀登技巧与高山反应应对</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🧭</span>
+                    <h4>野外生存</h4>
+                    <p>搭建庇护所、水源净化与觅食</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🏛️</span>
+                    <h4>历史遗迹</h4>
+                    <p>考古发现与古文明探索</p>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🦋</span>
+                    <h4>生态摄影</h4>
+                    <p>自然摄影技巧与野生动物观察</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Survival Guide Preview -->
+        <section id="guide">
+            <div class="section-header">
+                <h2>实用生存指南</h2>
+                <a href="#" class="view-all">进入工具箱 →</a>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-content">
+                        <span class="card-tag" style="background:#e67e22">干货</span>
+                        <h3 class="card-title">户外背包的选择与整理</h3>
+                        <p class="card-excerpt">如何根据行程长度选择合适容量的背包？背包的轻重量化整理原则。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-content">
+                        <span class="card-tag" style="background:#27ae60">急救</span>
+                        <h3 class="card-title">高原反应急救手册</h3>
+                        <p class="card-excerpt">基础症状识别、吸氧技巧以及何时必须下撤的科学判断。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-content">
+                        <span class="card-tag" style="background:#8e44ad">导航</span>
+                        <h3 class="card-title">无信号区域GPS使用技巧</h3>
+                        <p class="card-excerpt">离线地图下载、轨迹记录以及结合指南针的混合导航法。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>订阅探险简报</h2>
+            <p>每周获取最新的探险路线推荐、生存技巧分享以及摄影后期教程。</p>
+            <form class="form-group" onsubmit="event.preventDefault(); alert('感谢订阅！我们会尽快将最新内容发送至您的邮箱。');">
+                <input type="email" placeholder="请输入您的邮箱地址" required>
+                <button type="submit">订阅</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>游学者周卓</h3>
+                <p>致力于推广户外探索精神，分享实用的生存知识与自然之美。</p>
+            </div>
+            <div class="footer-col">
+                <h4>内容导航</h4>
+                <ul>
+                    <li><a href="#">探险日志</a></li>
+                    <li><a href="#">生存指南</a></li>
+                    <li><a href="#">摄影作品</a></li>
+                    <li><a href="#">装备评测</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">加入团队</a></li>
+                    <li><a href="#">合作联系</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="margin-bottom:1rem; font-size:0.9rem;">获取最新动态与独家资源。</p>
+                <div style="font-size:1.5rem; display:flex; gap:1rem;">
+                    <a href="#">📷</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📘</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 游学者周卓. All Rights Reserved. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const navList = document.getElementById('nav-list');
+            navList.classList.toggle('show');
+        }
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-list').classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+              </html>
