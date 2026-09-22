@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="补肾食疗网提供专业的补肾养生食谱、食材搭配指南及中医食疗理论，帮助您通过日常饮食改善肾虚体质，增强身体活力。">
+    <meta name="keywords" content="补肾食疗,肾虚食疗,补肾食谱,男性养生,女性养生,中医食疗">
+    <title>补肾食疗-专业食疗调理与养生食谱推荐</title>
+    <style>
+        :root {
+            --primary-color: #2c5e2e; /* 深绿色，象征健康与自然 */
+            --secondary-color: #6b8e23; /* 鹿角菜绿 */
+            --accent-color: #d4a017; /* 金色，点缀 */
+            --bg-color: #f9fbf9;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 36px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            background-color: #c4930f;
+        }
+
+        /* 分类导航 */
+        .category-nav {
+            background: var(--white);
+            padding: 20px 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background-color: #f0f7f0;
+            border-radius: 20px;
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-item:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* 主要内容区 */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 常见问题板块 */
+        .faq-section {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* 食材推荐板块 */
+        .ingredients-section {
+            padding: 60px 0;
+        }
+
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .ingredient-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ingredient-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #f4f9f4;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .ingredient-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .ingredient-card p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* 食谱推荐板块 */
+        .recipes-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .recipe-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .recipe-img {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            position: relative;
+        }
+        
+        .recipe-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .recipe-content {
+            padding: 20px;
+        }
+
+        .recipe-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .recipe-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .recipe-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* 知识科普板块 */
+        .knowledge-section {
+            background-color: #f0f4f0;
+            padding: 60px 0;
+        }
+
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .knowledge-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .knowledge-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .knowledge-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .knowledge-list li::before {
+            content: '✔';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .knowledge-img img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2b2b2b;
+            color: #aaa;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .nav-menu {
+                display: none; /* 移动端简化：隐藏导航，实际项目可做汉堡菜单 */
+            }
+
+            .category-nav {
+                margin-top: 0;
+                border-radius: 0;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .knowledge-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                🌿 补肾食疗
+                <span>专业食疗调理平台</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#recipes">热门食谱</a></li>
+                    <li><a href="#ingredients">补肾食材</a></li>
+                    <li><a href="#knowledge">食疗知识</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>食补胜于药补，健康从日常餐桌开始</h1>
+            <p>结合中医养生理论与现代营养学，为您提供科学、安全、有效的补肾食疗方案，助您恢复元气，焕发活力。</p>
+            <a href="#recipes" class="hero-btn">立即查看食谱</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <nav class="category-nav">
+            <ul class="category-list">
+                <li class="category-item">💪 男性补肾</li>
+                <li class="category-item">🌸 女性养血</li>
+                <li class="category-item">🥣 粥汤调理</li>
+                <li class="category-item">🍲 药膳炖品</li>
+                <li class="category-item">🍵 茶饮养生</li>
+                <li class="category-item">🍎 饮食禁忌</li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <!-- 知识科普板块 -->
+        <section id="knowledge" class="knowledge-section">
+            <div class="container">
+                <div class="knowledge-grid">
+                    <div class="knowledge-text">
+                        <h2>什么是科学的补肾食疗？</h2>
+                        <p>补肾并非一味地“壮阳”。中医认为“肾为先天之本”，补肾食疗的核心在于通过饮食滋养肾精，改善因肾虚引起的腰膝酸软、头晕耳鸣、精力不足等症状。科学的食疗讲究“辨证施膳”，根据个人体质选择温补、滋阴或平补的食材。</p>
+                        <ul class="knowledge-list">
+                            <li><strong>温补食材：</strong>羊肉、韭菜、核桃、生姜（适合阳虚体质）</li>
+                            <li><strong>滋阴食材：</strong>黑豆、黑芝麻、桑葚、枸杞（适合阴虚体质）</li>
+                            <li><strong>平补食材：</strong>山药、芡实、莲子、板栗（适合日常调理）</li>
+                        </ul>
+                    </div>
+                    <div class="knowledge-img">
+                        <img src="https://picsum.photos/seed/knowledge/600/400" alt="养生食材搭配示意图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 补肾食材推荐 -->
+        <section id="ingredients" class="ingredients-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>经典补肾食材</h2>
+                    <p>药食同源，这些食材是食疗调理的基础</p>
+                </div>
+                <div class="ingredient-grid">
+                    <article class="ingredient-card">
+                        <div class="ingredient-icon">🌰</div>
+                        <h3>黑芝麻</h3>
+                        <p>补肝肾、益精血，常用于须发早白及腰膝酸软。</p>
+                    </article>
+                    <article class="ingredient-card">
+                        <div class="ingredient-icon">🫘</div>
+                        <h3>黑豆</h3>
+                        <p>被誉为“肾之谷”，健脾利湿，活血解毒。</p>
+                    </article>
+                    <article class="ingredient-card">
+                        <div class="ingredient-icon">🌰</div>
+                        <h3>核桃</h3>
+                        <p>补肾固精，温肺定喘，富含不饱和脂肪酸。</p>
+                    </article>
+                    <article class="ingredient-card">
+                        <div class="ingredient-icon">🍄</div>
+                        <h3>山药</h3>
+                        <p>健脾益肾，滋阴润肺，适合脾胃虚弱者长期食用。</p>
+                    </article>
+                    <article class="ingredient-card">
+                        <div class="ingredient-icon">🐟</div>
+                        <h3>鲈鱼</h3>
+                        <p>补肝肾，益脾胃，肉质细嫩，易于消化吸收。</p>
+                    </article>
+                    <article class="ingredient-card">
+                        <div class="ingredient-icon">🥩</div>
+                        <h3>枸杞子</h3>
+                        <p>滋补肝肾，益精明目，可直接泡水或入膳。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门食谱推荐 -->
+        <section id="recipes" class="recipes-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>精选食疗食谱</h2>
+                    <p>简单易做，营养美味，照着做就有效</p>
+                </div>
+                <div class="recipe-grid">
+                    <!-- 食谱 1 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <span class="tag">经典</span>
+                            <img src="https://picsum.photos/seed/recipe1/400/300" alt="黑芝麻核桃粥">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">黑芝麻核桃粥</h3>
+                            <p class="recipe-desc">将黑芝麻、核桃仁与大米同煮，早晚食用。具有极佳的补肾益脑效果，适合经常用脑及腰膝酸软人群。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 制作时间：30分钟</span>
+                                <span>🔥 难度：简单</span>
+                            </div>
+                            <a href="#" class="recipe-link">查看详细做法 →</a>
+                        </div>
+                    </article>
+
+                    <!-- 食谱 2 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <span class="tag">滋补</span>
+                            <img src="https://picsum.photos/seed/recipe2/400/300" alt="山药枸杞炖鸡汤">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">山药枸杞炖鸡汤</h3>
+                            <p class="recipe-desc">选用老母鸡，加入铁棍山药和枸杞慢炖。汤鲜味美，能健脾补肾，增强免疫力。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 制作时间：2小时</span>
+                                <span>🔥 难度：中等</span>
+                            </div>
+                            <a href="#" class="recipe-link">查看详细做法 →</a>
+                        </div>
+                    </article>
+
+                    <!-- 食谱 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <span class="tag">清补</span>
+                            <img src="https://picsum.photos/seed/recipe3/400/300" alt="韭菜炒虾仁">
+                        </div>
+                        <div class="recipe-content">
+                            <h3 class="recipe-title">韭菜炒虾仁</h3>
+                            <p class="recipe-desc">韭菜性温，能温肾助阳；虾仁富含蛋白质。两者搭配，色泽鲜艳，口感鲜美，是经典的补肾菜肴。</p>
+                            <div class="recipe-meta">
+                                <span>⏱ 制作时间：15分钟</span>
+                                <span>🔥 难度：简单</span>
+                            </div>
+                            <a href="#" class="recipe-link">查看详细做法 →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>补肾食疗常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>肾虚一定要吃药吗？</h3>
+                        <p>不一定。大多数轻度肾虚可以通过饮食调理改善。建议先尝试食疗，若症状持续或加重，应及时就医，在医生指导下进行药物治疗。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>哪些人不能吃补肾药膳？</h3>
+                        <p>阴虚火旺、实热体质者不宜盲目温补。感冒发烧期间、湿热体质人群应暂停食用滋补类食材，以免“闭门留寇”。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>补肾食物可以天天吃吗？</h3>
+                        <p>虽然食材安全，但养生讲究平衡。任何食物过量食用都可能引起身体负担。建议多样化饮食，每周轮换不同的补肾食材。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>食疗见效需要多久？</h3>
+                        <p>食疗是一个缓慢的过程，通常需要坚持2-3个月才能看到明显效果。请保持耐心，配合规律作息和适度运动。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于补肾食疗</h4>
+                    <p>我们致力于传播科学的中医养生理念，提供实用的食疗食谱，帮助大众通过日常饮食改善健康状况，回归自然养生之道。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">热门食谱排行</a></li>
+                        <li><a href="#">补肾食材百科</a></li>
+                        <li><a href="#">专家咨询</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>温馨提示</h4>
+                    <ul>
+                        <li><a href="#">饮食禁忌指南</a></li>
+                        <li><a href="#">体质自测方法</a></li>
+                        <li><a href="#">养生误区解析</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 补肾食疗网. 保留所有权利. 本站内容仅供参考，不作为医疗诊断依据。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                                                                   </html>
