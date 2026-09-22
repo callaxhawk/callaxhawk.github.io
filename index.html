@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福昕pdf编辑器免费版 - 在线PDF处理工具与使用指南</title>
+    <meta name="description" content="提供福昕pdf编辑器免费版的相关信息、功能介绍、下载指南及使用教程。了解如何使用福昕免费PDF编辑器进行文档编辑、格式调整与安全处理。">
+    <meta name="keywords" content="福昕pdf编辑器免费版, 福昕PDF编辑器, 在线PDF编辑, PDF转换, 福昕官网">
+    <style>
+        :root {
+            --primary-color: #0056D2;
+            --secondary-color: #E3F0FF;
+            --accent-color: #00A3E0;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #F7F9FC;
+            --bg-card: #FFFFFF;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #0044b3;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--secondary-color) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid var(--primary-color);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            opacity: 0.9;
+        }
+
+        /* Feature Grid */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 48px;
+            color: var(--text-main);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* How to Use / Guide */
+        .guide {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .guide-content p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .steps {
+            margin-top: 32px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .step-number {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .guide-image {
+            background-color: #f0f2f5;
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            .guide-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#0056D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 2V8H20" stroke="#0056D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 13H8" stroke="#0056D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 17H8" stroke="#0056D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 9H8" stroke="#0056D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Foxit<span>PDF</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features">核心功能</a>
+                <a href="#guide">使用教程</a>
+                <a href="#faq">常见问题</a>
+                <a href="#download">下载中心</a>
+            </nav>
+            <a href="#download" class="btn-download">免费下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>福昕PDF编辑器免费版</h1>
+                <p>安全、便捷、高效的文档处理工具。无需安装庞大软件，直接在浏览器中编辑、转换和合并PDF文件，保护您的隐私安全。</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToDownload()">立即在线编辑</button>
+                    <button class="btn-secondary" onclick="window.open('https://www.foxit.com/zh-CN/whats-new/', '_blank')">查看更新日志</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">强大的免费PDF处理能力</h2>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">✎</div>
+                        <h3>文字与图像编辑</h3>
+                        <p>支持在PDF文档中直接添加、修改、删除文字和图片，调整字体大小、颜色和样式，如同编辑Word文档一样简单。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📄</div>
+                        <h3>文档格式转换</h3>
+                        <p>一键将PDF文件转换为Word、Excel、PPT等常用格式，支持反向转换，保留原有的排版和格式不乱码。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全加密保护</h3>
+                        <p>使用福昕提供的免费工具，可为重要文档设置密码保护，防止未授权访问，确保数据安全。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <h2>如何使用福昕PDF编辑器免费版？</h2>
+                        <p>福昕PDF编辑器免费版（Web版）专为提升办公效率而设计。您无需在本地安装任何插件，通过浏览器即可完成大部分PDF编辑任务。</p>
+                        <div class="steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-text">
+                                    <h4>上传文件</h4>
+                                    <p>点击“选择文件”按钮，将您需要编辑的PDF文档上传到云端。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-text">
+                                    <h4>在线编辑</h4>
+                                    <p>使用工具栏上的工具进行文本插入、图片替换、页面旋转或拆分合并操作。</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-text">
+                                    <h4>保存与导出</h4>
+                                    <p>点击“保存”即可将修改后的文档下载到本地，或直接分享给他人。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide-image">
+                        <!-- Placeholder for UI representation -->
+                        <img src="https://picsum.photos/seed/foxitpdf/600/400.jpg" alt="福昕PDF编辑器界面演示">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">福昕PDF编辑器免费版支持哪些操作系统？</div>
+                        <div class="faq-answer">福昕PDF编辑器免费版主要提供在线网页版服务，支持Windows、macOS、Linux以及移动端浏览器，无需下载客户端即可使用基础功能。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">免费版和付费版的主要区别是什么？</div>
+                        <div class="faq-answer">免费版涵盖了日常编辑、转换和合并等核心功能，适合个人轻度使用。付费版（如Foxit PDF Editor）通常提供更高级的批注、OCR识别、表单填写及团队协作功能。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">上传的文件会泄露或丢失吗？</div>
+                        <div class="faq-answer">福昕非常重视用户隐私。文件通常在处理完成后会自动从服务器删除，上传过程支持加密传输，确保您的文档安全。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何获取福昕PDF编辑器免费版？</div>
+                        <div class="faq-answer">您可以通过福昕官网下载中心找到“免费版”入口，或者直接点击页面上的“立即在线编辑”按钮进入在线服务。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download CTA -->
+        <section id="download" style="background-color: var(--secondary-color); padding: 60px 0; text-align: center;">
+            <div class="container">
+                <h2 style="margin-bottom: 20px;">开始您的PDF编辑之旅</h2>
+                <p style="margin-bottom: 30px; color: var(--text-light);">立即体验高效、安全的PDF处理服务，无需注册即可开始使用。</p>
+                <button class="btn-primary" onclick="window.location.href='https://www.foxit.com/zh-CN/download/'">下载免费版客户端</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于福昕</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">PDF编辑器</a></li>
+                        <li><a href="#">PDF转换器</a></li>
+                        <li><a href="#">PDF阅读器</a></li>
+                        <li><a href="#">PDF签名</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与帮助</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p>获取最新的产品资讯和使用技巧。</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Foxit Software. All rights reserved. 此页面为演示页面，非福昕官方网站。
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    if (child !== parent) child.classList.remove('active');
+                });
+                // Toggle current
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll
+        function scrollToDownload() {
+            document.getElementById('download').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+                      </html>
