@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深夜剧-沉浸式都市情感与悬疑解压指南</title>
+    <meta name="description" content="深夜剧收录并推荐适合深夜独自观看的优质剧集，涵盖都市情感、悬疑推理、治愈系动画及经典老片。提供详细的剧情解析、观看时间建议及避雷指南，助您在静谧夜晚找到最契合心境的影像陪伴。">
+    <meta name="keywords" content="深夜剧,都市情感剧,悬疑剧,治愈系动画,经典老片,睡前剧集">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #181b21;
+            --text-main: #e0e0e0;
+            --text-muted: #8b9bb4;
+            --accent: #6c5ce7;
+            --accent-hover: #5649c0;
+            --border: #2d3340;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+            margin-left: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 17, 21, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            width: 300px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            width: 100%;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(to right, #0f1115 0%, #0f1115 40%, rgba(15, 17, 21, 0.8) 100%), 
+                        url('https://picsum.photos/seed/night/1920/1080') center/cover no-repeat;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            background-color: rgba(108, 92, 231, 0.2);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .category-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Featured Section */
+        .featured-section {
+            margin-bottom: 3rem;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .featured-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            height: 100%;
+            min-height: 300px;
+            border: 1px solid var(--border);
+        }
+
+        .featured-img {
+            width: 40%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .featured-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent 0%, rgba(15, 17, 21, 0.9) 100%);
+        }
+
+        .featured-info {
+            width: 60%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .featured-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Side List */
+        .side-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .side-item {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .side-item:hover {
+            border-color: var(--border);
+        }
+
+        .side-thumb {
+            width: 80px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .side-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .side-content p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .guide-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .guide-list {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .guide-list li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            list-style-type: disc;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0c0f;
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .featured-img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .featured-info {
+                width: 100%;
+                padding: 1.5rem;
+            }
+
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <span>☾</span> 深夜剧
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">情感治愈</a></li>
+                <li><a href="#">悬疑推理</a></li>
+                <li><a href="#">经典老片</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索剧集、导演或演员...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">今日精选</span>
+            <h1>在这个静谧的夜晚，<br>让故事陪你入眠。</h1>
+            <p>深夜剧网汇集全网最优质的独处观影资源。从细腻的都市情感剧到烧脑的悬疑推理，我们为您甄选那些适合在深夜独自品味、最能触动心弦的影像作品。</p>
+            <div>
+                <button class="btn btn-primary">开始观看</button>
+                <button class="btn btn-secondary">浏览榜单</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section>
+        <h2 class="section-title">深夜分类导航</h2>
+        <div class="categories-grid">
+            <article class="category-card">
+                <span class="category-icon">💔</span>
+                <h3 class="category-title">都市情感</h3>
+                <p class="category-desc">探讨孤独、爱情与生活的细腻故事</p>
+            </article>
+            <article class="category-card">
+                <span class="category-icon">🔍</span>
+                <h3 class="category-title">悬疑推理</h3>
+                <p class="category-desc">烧脑剧情，适合清醒时的头脑风暴</p>
+            </article>
+            <article class="category-card">
+                <span class="category-icon">🌙</span>
+                <h3 class="category-title">治愈系动画</h3>
+                <p class="category-desc">画风唯美，舒缓压力的视觉盛宴</p>
+            </article>
+            <article class="category-card">
+                <span class="category-icon">📼</span>
+                <h3 class="category-title">经典老片</h3>
+                <p class="category-desc">跨越时代的经典，重温永恒记忆</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Featured Content -->
+    <section class="featured-section">
+        <h2 class="section-title">本周推荐</h2>
+        <div class="featured-grid">
+            <!-- Main Feature -->
+            <article class="featured-card">
+                <div class="featured-img" style="background-image: url('https://picsum.photos/seed/sleep/600/400');">
+                    <div class="featured-overlay"></div>
+                </div>
+                <div class="featured-info">
+                    <span class="featured-meta">都市情感 / 24集 / 更新至第12集</span>
+                    <h3>《午夜摆渡人：城市的另一面》</h3>
+                    <p class="featured-desc">在这个不眠的都市里，每个人都有无法对人言说的秘密。深夜的出租车司机意外载到了一位神秘的乘客，两人在短短的几个小时旅程中，交换了彼此最脆弱的内心世界。这是一部关于理解、救赎与自我和解的温情之作，适合在凌晨三点独自观看。</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">立即播放</button>
+                        <button class="btn btn-secondary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">加入片单</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Side List -->
+            <aside class="side-list">
+                <article class="side-item">
+                    <div class="side-thumb" style="background-image: url('https://picsum.photos/seed/noir/200/200');"></div>
+                    <div class="side-content">
+                        <h4>《雾都侦探社》</h4>
+                        <p>悬疑 · 沉浸式</p>
+                    </div>
+                </article>
+                <article class="side-item">
+                    <div class="side-thumb" style="background-image: url('https://picsum.photos/seed/sky/200/200');"></div>
+                    <div class="side-content">
+                        <h4>《云端的信笺》</h4>
+                        <p>治愈 · 动画短片</p>
+                    </div>
+                </article>
+                <article class="side-item">
+                    <div class="side-thumb" style="background-image: url('https://picsum.photos/seed/oldfilm/200/200');"></div>
+                    <div class="side-content">
+                        <h4>《1988年的雨夜》</h4>
+                        <p>怀旧 · 经典重映</p>
+                    </div>
+                </article>
+                <article class="side-item">
+                    <div class="side-thumb" style="background-image: url('https://picsum.photos/seed/space/200/200');"></div>
+                    <div class="side-content">
+                        <h4>《星际漫游指南》</h4>
+                        <p>科幻 · 独处</p>
+                    </div>
+                </article>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="guide-section">
+        <h2 class="section-title">深夜观影指南</h2>
+        <div class="guide-grid">
+            <div class="guide-item">
+                <h3>为什么适合深夜看剧？</h3>
+                <p>深夜是情绪最敏感、最容易被触动的时刻。此时独自观看，更容易与剧中的角色产生共情，获得情感宣泄或心理慰藉。</p>
+                <ul class="guide-list">
+                    <li>避免白天社交面具带来的压抑感</li>
+                    <li>更容易沉浸于复杂的剧情逻辑</li>
+                    <li>获得一种“有人陪伴”的孤独感</li>
+                </ul>
+            </div>
+            <div class="guide-item">
+                <h3>如何选择合适的剧集？</h3>
+                <p>深夜剧并非越刺激越好，关键在于契合当下的心境。建议根据您的情绪状态进行选择。</p>
+                <ul class="guide-list">
+                    <li>焦虑失眠：选择节奏舒缓的治愈系或喜剧</li>
+                    <li>孤独寂寞：选择有陪伴感的都市情感剧</li>
+                    <li>思维活跃：选择烧脑的悬疑推理剧</li>
+                </ul>
+            </div>
+            <div class="guide-item">
+                <h3>观影注意事项</h3>
+                <p>为了保护视力并维持良好的作息，请合理安排观看时间。</p>
+                <ul class="guide-list">
+                    <li>建议在睡前1小时停止观看，避免蓝光影响褪黑素分泌</li>
+                    <li>音量适中，避免惊吓导致心率过快</li>
+                    <li>准备一杯热饮，营造舒适的观影氛围</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">深夜剧是否适合所有人观看？</div>
+                <div class="faq-answer">大部分治愈系和悬疑剧适合大多数人群。但部分含有惊悚、血腥或极度压抑情节的剧集，建议在心理承受能力较强或有人陪伴时观看。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">网站上的剧集是否免费？</div>
+                <div class="faq-answer">本站致力于提供优质的观影体验，大部分内容通过合法渠道收录，旨在分享和推荐，请支持正版影视作品。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何获取最新更新的推荐？</div>
+                <div class="faq-answer">您可以点击首页顶部的“浏览榜单”，或订阅我们的周报，每周一为您推送本周最值得观看的深夜剧集。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">遇到卡顿或无法播放怎么办？</div>
+                <div class="faq-answer">请检查您的网络连接。深夜时段用户较多，若仍无法播放，请稍后再试或尝试切换至备用线路。</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col" style="flex: 2; min-width: 250px;">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <span>☾</span> 深夜剧
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 300px;">
+                    深夜剧网是一个专注于提供高质量独处观影资源的平台。我们相信，每一个深夜都有值得被讲述的故事，每一颗孤独的心都需要被温柔对待。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>浏览分类</h4>
+                <ul>
+                    <li><a href="#">都市情感</a></li>
+                    <li><a href="#">悬疑推理</a></li>
+                    <li><a href="#">治愈动画</a></li>
+                    <li><a href="#">经典老片</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 深夜剧 - 沉浸式都市情感与悬疑解压指南. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
